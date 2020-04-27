@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PDF Annotator</title>
+
+	<link rel="stylesheet" href="index.css" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf_viewer.css" >
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf_viewer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pouchdb/7.2.1/pouchdb.min.js"></script>
+	
+	<script>
+		window.onload = () => {
+			onLoad()
+			openPDF()
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div id="pageContainer" class="pdfViewer">
+			<div id="annotationDialogOverlay" class="overlay">
+				<select id="annotationDialog" class="annotation_select">
+				</select>
+				<button class="set_button" onclick="onAnnotationSet()">Set</button>
+			</div>
+		</div>
+		<div id="annotationLayer" class="annotation_layer"></div>
+		<div class="side_container">
+			<div class="sidebar">
+				<div class='annotation_type_config'>
+					<div style="font-size: 40px;text-align: center">
+						Annotation Type Configuration
+					</div>
+					<table class="annotation_type_table" id="annotationTypeTable">
+						<tr>
+							<th>Title</th>
+							<th>Color</th>
+							<th><a href="javascript:onAddAnnotationType()">Add</a></th>
+						</tr>
+						<tr id="hidden_row" class="row_hidden">
+							<td class='type_title' contenteditable="true" style="padding: 8px"></td>
+							<td class='type_color'><input type="color" value="#ff0000"></td>
+							<td class='type_remove' style="padding: 8px"><a href="#">Remove</a></td>
+						</tr>
+					</table>
+				</div>				
+				<div class="info">
+					Select some text in the PDF viewer to start annonating!
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./index.js"></script>
+</body>
+</html>

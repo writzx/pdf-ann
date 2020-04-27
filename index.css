@@ -1,0 +1,86 @@
+body {
+	background: #e2e1e0;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.page {
+	margin: 8px !important; 
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important; 
+	border: none !important;
+}
+
+.textLayer {
+	line-height: 1.5 !important;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+.pdfViewer {
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex: 1;
+	z-index: 1;
+}
+
+.side_container {
+	min-width: 300px;
+	width: 300px;
+	right: 0;
+	background: white;
+	box-shadow: 0 0px 10px rgba(0,0,0,0.16), 0 0px 10px rgba(0,0,0,0.23) !important; 
+}
+
+.sidebar {
+	position: sticky;
+	top: 0;
+	overflow: auto;
+}
+
+.overlay {
+	position: absolute;
+	display: none;
+	flex-direction: row;
+	width: 200px;
+	height: 32px;
+	background: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important; 
+	z-index: 1;
+	padding: 2px;
+}
+
+.annotation_select {
+	flex:1;
+	margin: 2px
+}
+
+.set_button {
+	margin: 2px
+}
+
+.row_hidden {
+	display: none;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	width: 40%
+}
+
+.annotation_type_config {
+	border: 4px solid black;
+	padding: 8px
+}
+
+.info {
+	padding: 8px
+}
