@@ -436,6 +436,8 @@ const updateAnnotationLayer = () => {
 				// empty highlight div
 				let el = document.createElement('div');
 				
+				let aType = getAnnType(annotation.type)
+				
 				el.className = 'annotation_element'
 				el.id = 'annotation' + i++
 				
@@ -445,6 +447,28 @@ const updateAnnotationLayer = () => {
 				el.style.top = Math.min(bounds[1], bounds[3]) + 'px'
 				el.style.width = Math.abs(bounds[0] - bounds[2]) + 'px'
 				el.style.height = Math.abs(bounds[1] - bounds[3]) + 'px'
+				el.style.zIndex = 4
+				el.style.cursor = 'text'
+				
+				
+				el.onmouseover = e => {
+					const annotationView = document.getElementById('annotationViewOverlay')
+					
+					annotationView.innerHTML = aType.title
+					annotationView.style.background = aType.color
+					annotationView.style.left = `${e.pageX}px`
+					annotationView.style.top = `${e.pageY}px`
+					annotationView.style.display = 'block'
+					
+					
+					console.log(annotationView)
+				}
+				
+				el.onmouseout = e => {
+					const annotationView = document.getElementById('annotationViewOverlay')
+					
+					annotationView.style.display = 'none'
+				}
 
 				pageElement.appendChild(el);
 			})

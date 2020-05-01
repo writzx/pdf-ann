@@ -55,6 +55,14 @@ body {
 	padding: 2px;
 }
 
+.view_overlay {
+	position: absolute;
+	display: none;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important; 
+	z-index: 1;
+	padding: 2px;
+}
+
 .annotation_select {
 	flex:1;
 	margin: 2px
@@ -74,6 +82,10 @@ table {
 
 th {
 	width: 40%
+}
+
+.annotation_element:active {
+	pointer-events: none;
 }
 
 .annotation_type_config {
